@@ -10,7 +10,7 @@ title:  Team
 ***UCI Net ID***: achatty
 
 ## Abheek Gandhi
-***UCI Net ID***: ucinetid2
+***UCI Net ID***: abheekg
 
 ## Ganeev Sidhu
 ***UCI Net ID***: ganeevss
