@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  Team
+title:  Doodle Or Die - Learning to jump through RL
 ---
 
 # {{ page.title }}
