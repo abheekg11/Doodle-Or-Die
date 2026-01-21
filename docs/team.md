@@ -3,14 +3,14 @@ layout: default
 title:  Team
 ---
 
-# {{ page.title }}
+# {{ Doodle Or Die - Learning to jump though RL }}
 
 
-## USER 1
-***UCI Net ID***: ucinetid1
+## Arnav Chatty
+***UCI Net ID***: achatty
 
-## USER 2
+## Abheek Gandhi
 ***UCI Net ID***: ucinetid2
 
-## USER 3
-***UCI Net ID***: ucinetid3
+## Ganeev Sidhu
+***UCI Net ID***: ganeevss
