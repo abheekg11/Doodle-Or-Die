@@ -3,7 +3,7 @@ layout: default
 title:  Team
 ---
 
-# {{ Doodle Or Die - Learning to jump though RL }}
+# {{ page.title }}
 
 
 ## Arnav Chatty
