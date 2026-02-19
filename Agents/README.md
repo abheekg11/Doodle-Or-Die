@@ -1,8 +1,6 @@
-# Doodle-Jump-RL
-## **USC - CSCI 527** Under Prof. Micheal Zyda
-Game Bot Reinforcement Learning and Adversarial Attack 
-## [Jump to our webpage](https://pranavmswamy.github.io/doodle-jump-website/)
-<img src="game\assets\giphy_end.gif" width="150" height="150"/>
+# Doodle-Or-Die 
+
+(Adapted from https://github.com/USC-CSCI527-Spring2021/Doodle-Jump)
 
 ## Getting Started
 1. Clone the repository
@@ -59,30 +57,4 @@ python a2cAgent.py --options
 * Train/Test **PPO** Model
 ```
 python ppoAgent.py --options
-```
-
-## Folder Tree
-```
-Root
-|   .gitignore
-|   a2cAgent.py
-|   deepQAgent.py
-|   helper.py
-|   ppoAgent.py
-|   README.md
-|   requirements.txt
-|   rewards.py
-|
-+---game
-|   |   doodlejump.py
-|   |   LICENSE
-|   |   __init__.py
-|   |
-|   \---assets
-|
-\---model
-    |   a2cTrainer.py
-    |   deepQTrainer.py
-    |   networks.py
-    |   ppoTrainernew.py
 ```
