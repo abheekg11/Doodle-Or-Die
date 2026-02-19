@@ -20,9 +20,6 @@ class Agent:
         seed = args.seed
         self.exploration = args.exploration
 
-        # -------------------------
-        # ✅ Safe seeding
-        # -------------------------
         os.environ['PYTHONHASHSEED'] = str(seed)
         torch.manual_seed(seed)
         if torch.cuda.is_available():
@@ -37,7 +34,6 @@ class Agent:
         self.image_c = args.channels
         self.memory = deque(maxlen=args.max_memory)
 
-        # ✅ Device-safe
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         self.gamma = args.gamma
@@ -52,9 +48,6 @@ class Agent:
         if args.explore == "epsilon_g_decay_exp":
             self.epsilon = 1
 
-        # -------------------------
-        # ✅ Model selection
-        # -------------------------
         if args.model == "dqn":
             self.model = Deep_QNet()
         elif args.model == "drqn":
@@ -69,9 +62,6 @@ class Agent:
         # Move model to device
         self.model.to(self.device)
 
-        # -------------------------
-        # ✅ Load pretrained weights safely
-        # -------------------------
         if args.model_path:
             self.model.load_state_dict(
                 torch.load(args.model_path, map_location=self.device)
@@ -88,9 +78,6 @@ class Agent:
             attack_eps=args.attack_eps
         )
 
-    # --------------------------------------------------
-    # Preprocessing
-    # --------------------------------------------------
     def preprocess(self, state):
         img = cv2.resize(state, (self.image_w, self.image_h))
         M = cv2.getRotationMatrix2D((self.image_w / 2, self.image_h / 2), 270, 1.0)
@@ -118,9 +105,6 @@ class Agent:
         state = game.getCurrentFrame()
         return self.preprocess(state)
 
-    # --------------------------------------------------
-    # Memory
-    # --------------------------------------------------
     def remember(self, state, action, reward, next_state, done):
         self.memory.append((state, action, reward, next_state, done))
 
@@ -138,9 +122,6 @@ class Agent:
         self.model.train()
         return self.trainer.train_step(state, action, reward, next_state, done)
 
-    # --------------------------------------------------
-    # Exploration
-    # --------------------------------------------------
     def should_explore(self, test_mode):
         self.steps += 1
         if test_mode:
@@ -155,9 +136,6 @@ class Agent:
 
         return r > self.epsilon
 
-    # --------------------------------------------------
-    # Action selection
-    # --------------------------------------------------
     def get_action(self, state, test_mode=False):
         final_move = [0, 0, 0]
 
@@ -173,10 +151,6 @@ class Agent:
         final_move[move] = 1
         return final_move
 
-
-# =========================================================
-# TRAIN
-# =========================================================
 def train(game, args, writer):
     if args.macos:
         os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
@@ -214,10 +188,6 @@ def train(game, args, writer):
             mean_score = total_score / agent.n_games
             writer.add_scalar('Score/Mean', mean_score, agent.n_games)
 
-
-# =========================================================
-# TEST
-# =========================================================
 def test(game, args):
     if args.macos:
         os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
@@ -243,10 +213,6 @@ def test(game, args):
 
             print(f'Game {agent.n_games} Score {score} Record {record} Mean {cum_score/agent.n_games}')
 
-
-# =========================================================
-# MAIN
-# =========================================================
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='RL Agent for Doodle Jump')
     parser.add_argument("--macos", action="store_true")
@@ -284,3 +250,4 @@ if __name__ == "__main__":
     else:
         writer = SummaryWriter(log_dir="runs")
         train(game, args, writer)
+
