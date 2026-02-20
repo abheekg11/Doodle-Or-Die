@@ -8,13 +8,13 @@ title:  Doodle Or Die - Learning to jump through RL
 Here's a bit about our team! You can check out our github profiles as well.
 
 ## Arnav Chatty
-***UCI Net ID***: achatty
+***UCI Net ID***: achatty 
 [Arnav's GitHub Profile](https://github.com/arrrnav)
 
 ## Abheek Gandhi
-***UCI Net ID***: abheekg
+***UCI Net ID***: abheekg 
 [Abheek's GitHub Profile](https://github.com/abheekg11)
 
 ## Ganeev Sidhu
-***UCI Net ID***: ganeevss
+***UCI Net ID***: ganeevss 
 [Ganbeev's GitHub Profile](https://github.com/ganeevsinghs)
