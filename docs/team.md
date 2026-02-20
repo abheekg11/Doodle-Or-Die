@@ -20,4 +20,4 @@ Here's a bit about our team! You can check out our github profiles as well.
 ## Ganeev Sidhu  
 ***UCI Net ID***: ganeevss  
 
-[Ganbeev's GitHub Profile](https://github.com/ganeevsinghs)
+[Ganeev's GitHub Profile](https://github.com/ganeevsinghs)
