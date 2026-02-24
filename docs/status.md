@@ -141,7 +141,7 @@ where $$R_{\geq t}(\xi)$$ is the return from time $$t$$ onward.
 
 The policy parameters are updated as:  
 
-$$\Delta\theta \leftarrow \sum_{t}(R_{\geq t}(\xi) - V_{\phi}(s_t))\Delta_{\theta}log\pi_{\theta}(a_t | s_t)$$
+$$\Delta\theta \leftarrow \sum_{t}(R_{\geq t}(\xi) - V_{\phi}(s_t))\Delta_{\theta}log\pi_{\theta}(a_t \mid s_t)$$
 
 This update increases the probability of actions that lead to higher-than-expected returns and decreases the probability of poor actions.
 
@@ -175,7 +175,7 @@ Updated parameters sourced from [USC Agent](https://github.com/USC-CSCI527-Sprin
 
 Proximal Policy Optimization (PPO) is a reinforcement learning algorithm that directly optimizes a policy by maximizing expected reward while constraining how much the policy is allowed to change between updates. Similar to A2C, PPO maintains both an actor (policy) and a critic (value function) in a single shared network and learns by interacting with the environment.
 
-The training data consists of $$(s_t, a_t, log\pi(a_t|s_t), V_t, r_t, d_t)$$ where: 
+The training data consists of $$(s_t, a_t, log\pi(a_t \mid s_t), V_t, r_t, d_t)$$ where: 
 - $$s_t$$ is the current state (game frame)
 - $$a_t$$​ is the chosen action (left, right, none)
 - $$log\pi(a_t \mid s_t)$$ is the log probability of the taken action under the current policy
@@ -185,7 +185,7 @@ The training data consists of $$(s_t, a_t, log\pi(a_t|s_t), V_t, r_t, d_t)$$ whe
 
 PPO is an on-policy method, meaning it learns directly from transitions collected under the current policy. Rather than a large replay buffer, experience is accumulated in a short-term buffer and then the buffer is refreshed with new experience. During policy evaluation, the network parameters θ are updated by maximizing the objective:
 
-$$L^\theta_{\bar{\theta}}(s, a) = \min(\rho^\theta_{\bar{\theta}}(a \mid s) A_{\bar{\theta}}(s, a),\ A_{\bar{\theta}}(s, a) + | \epsilon A_{\bar{\theta}}(s, a) |)$$  
+$$L^\theta_{\bar{\theta}}(s, a) = \min(\rho^\theta_{\bar{\theta}}(a \mid s) A_{\bar{\theta}}(s, a),\ A_{\bar{\theta}}(s, a) + \mid \epsilon A_{\bar{\theta}}(s, a)  \mid)$$  
 
 Sourced from [CS175 Lecture 2](https://royf.org/crs/CS175/W26/CS175L2.pdf)
 
