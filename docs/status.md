@@ -3,6 +3,25 @@ layout: default
 title: Status
 ---
 
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+</style>
+
 <iframe width="752" height="432" src="https://www.youtube.com/embed/_sAHElX0HlM" title="Doodle or Die - CS 175 - Abheek, Arnav, and Ganeev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Project Summary
