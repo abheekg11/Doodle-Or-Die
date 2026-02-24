@@ -178,7 +178,7 @@ Proximal Policy Optimization (PPO) is a reinforcement learning algorithm that di
 The training data consists of $$(s_t, a_t, log\pi(a_t|s_t), V_t, r_t, d_t)$$ where: 
 - $$s_t$$ is the current state (game frame)
 - $$a_t$$​ is the chosen action (left, right, none)
-- $$log\pi(a_t|s_t)$$ is the log probability of the taken action under the current policy
+- $$log\pi(a_t \mid s_t)$$ is the log probability of the taken action under the current policy
 - $$V_t$$​ is the critic's value estimate
 - $$r_t$$​ is the reward, $$s_{t+1}$$ is the next state
 - $$d_t$$​ indicates whether the current game ended
