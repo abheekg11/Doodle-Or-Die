@@ -20,4 +20,4 @@ In our project, Doodle or Die, we will train a reinforcement learning agent to p
 - [Another Doodle Jump Project](https://github.com/USC-CSCI527-Spring2021/Doodle-Jump/tree/master)
 - [Video on AI learning Doodle Jump](https://www.youtube.com/watch?v=DQR2AmOSm4c)
 
-<iframe width="1521" height="526" src="https://www.youtube.com/embed/DQR2AmOSm4c" title="AI Learns How To Play Doodle Jump" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="752" height="432" src="https://www.youtube.com/embed/DQR2AmOSm4c" title="AI Learns How To Play Doodle Jump" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
