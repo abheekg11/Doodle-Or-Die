@@ -122,7 +122,7 @@ Algorithm:
 - Initialize $$\pi{\theta}$$ and $$V_{\phi}$$
 - repeat
   - Roll out $$\xi$$ ~ $$p_{\theta}$$
-  - Update $$\Delta\theta \leftarrow \sum_{t}(R_{\geq t}(\xi) - V_{\phi}(s_t))\Delta_{\theta}log\pi_{\theta}(a_t | s_t)$$
+  - Update $$\Delta\theta \leftarrow \sum_{t}(R_{\geq t}(\xi) - V_{\phi}(s_t))\Delta_{\theta}log\pi_{\theta}(a_t \mid s_t)$$
   - Descend $$L_{\phi} = \sum_{t}(R_{\geq t}(\xi) - V_{\phi}(s_t))^2$$
 
 Sourced from [CS175 Lecture 2](https://royf.org/crs/CS175/W26/CS175L2.pdf)
