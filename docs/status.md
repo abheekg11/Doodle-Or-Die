@@ -3,7 +3,7 @@ layout: default
 title: Status
 ---
 
-<iframe width="752" height="432" src="https://www.youtube.com/embed/wR9MilgXEm0" title="Why does Everyone Hate the BEST FISH?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="752" height="432" src="https://www.youtube.com/embed/_sAHElX0HlM" title="Doodle or Die - CS 175 - Abheek, Arnav, and Ganeev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Project Summary
 
@@ -136,7 +136,7 @@ A2C learns smoother, lower-variance policies, which in our experiments led to sl
 - Entropy coefficient: 0.01
 - Value loss coefficient: 0.5
 
-### Proxima Policy Optimization
+### Proximal Policy Optimization
 
 **Overview**  
 
@@ -172,8 +172,39 @@ After each update, the policy is improved by shifting towards actions with posit
 - Entropy coefficient: 0.01
 - Number of epochs per update: 4
 
+### Hyperparameters Summary  
+
+| Agent | LR Actor | LR Critic | γ | Buffer | Batch | Optimizer | Extra |
+|-------|----------|-----------|---|--------|-------|-----------|-------|
+| DQN | 0.001 | N/A | 0.9 | 10,000 | 1,000 | Adam | Target network every 1,000 steps, ε-greedy decay 1→0.05 |
+| A2C | 0.0004 | 0.004 | 0.9 | 10,000 | 1,000 | RMSprop | Entropy=0.01, Value loss=0.5 |
+| PPO | 0.0004 | 0.0004 | 0.9 | 10,000 | 1,000 | Adam | Clip ε=0.2, Entropy=0.01, Value loss=0.5, 4 epochs per update |
+
 ## Evaluation
 
-## Remaining Goals and Challenges
+### Quantitative Results
+
+To evaluate our Doodle Jump RL agents, we ran each model for 1,000 game iterations and recorded both the mean score and the maximum score achieved. The scores correspond to the total vertical height gained in each round.
+
+| Agent | Mean Score | Maximum Score |
+|-------|------------|---------------|
+| DQN   | 2,290.5    | 24,600        |
+| A2C   | 2,019      | 20,600        |
+| PPO   | 1,116.7    | 9,200         |
+
+From these results, we observe that both the DQN and A2C agents learned effective strategies, consistently achieving mean scores above 2,000. DQN shows the highest maximum score, indicating its ability to occasionally exploit long sequences of favorable platform positions. A2C achieves a slightly lower mean and also a slightly lower maximum score. A2C exhibits more conservative behavior, which stabilizes mean performance but limits high scores. On the other hand, the aggressive behavior of PPO towards edges causes it to achieve much lower scores on average and a much lower maximum score. 
+
+### Qualitative Observations  
+
+Beyond numerical performance, we also observed differences in agent *behavior* during gameplay:
+- DQN: Often continues moving in a single direction for extended periods. This strategy sometimes allows it to reach very high scores if platforms align favorably but can also lead to falls in less favorable sequences. It also causes the agent to get stuck in loops while continuing to jump on the same platforms. 
+- A2C: Moves slowly and favors the center of the screen. This conservative policy results in relatively stable mean scores but lower maximum scores, as the agent rarely chooses riskier lateral movements. Also, this leads to the agent falling off cliffs occasionally due to not moving fast enough to reach platforms. 
+- PPO: Balances between central and side positions with medium-speed movements. This strategy produces lower maximum scores while also lowering mean performance showing the ineffectiveness of the clipped policy updates and entropy-driven exploration.
+
+## Remaining Goals and Challenges  
+
+Our current prototype trains DQN, A2C, and PPO agents, but can be improved further. The evaluation is currently limited to mean and maximum scores over the course of the game. We have yet to conduct deeper analysis with learning curves and studies by tuning different hyperparameters. We also plan to compare our agents against a baseline heuristic based agent which we will create to follow specific rules and constraints. Also, we would like to train and test with the medium and hard levels because we currently have focused on the easy level. We also aim to perform a grid search with different hyperparameter combinations. As of now, we have enabled training locally on CPU in order to allow us to train with no time constraints and tune hyperparameters freely.  
+
+We anticipate several challenges including issues when scaling to the medium and hard levels. Another challenge would include ensuring that each algorithm is training for similar amounts of time because different sets of hyperparameters can cause huge differences in training time. Lastly, the challenge of time remains a large one, as training may be quite time consuming and limited time along with limited GPU hours would be a constraint. We plan to overcome these challenges by training on all 3 of the levels, standardizing our evaluation and training times, and prioritizing evaluation in later stages rather than training to make sure enough evaluation has been done.
 
 ## Resources Used
