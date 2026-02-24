@@ -3,7 +3,7 @@ layout: default
 title:  Home
 ---
 
-## [Source code](https://github.com/abheekg11/Doodle-Or-Die)
+## [Link to Source code](https://github.com/abheekg11/Doodle-Or-Die)
 
 In our project, Doodle or Die, we will train a reinforcement learning agent to play the game Doodle Jump. Doodle Jump is a 2-D game where the player must make real time decisions to maximize height without falling off of various static and dynamic platforms and obstacles. The RL application of this project is in learning how to strategically jump and avoid behaviours that lead to falling or obstacle collision. At each step, the agent takes the current game state as input, including the position and shape of platforms, obstacles, and the player. Accordingly, it will continually choose a direction and magnitude along the horizontal axis. The overarching goal is to train an agent to go as high as possible both consistently and efficiently.
 
