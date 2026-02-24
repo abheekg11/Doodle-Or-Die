@@ -82,8 +82,12 @@ DQN learns to estimate long-term rewards for lateral movements, enabling the age
 - Discount factor $$\gamma$$: 0.9
 - Replay buffer size: 10,000
 - Batch size: 1,000
-- Optimizer: Adam ($$\beta_{1}$$=0.9, $$\beta_{2}$$=0.999, $$\epsilon$$=1e-8)
+- Policy: Adam
 - Target network update frequency: every 1,000 steps
+
+All other parameters left at default from [stablebaslines3](https://stable-baselines3.readthedocs.io/en/master/modules/dqn.html)  
+
+Updated parameters sourced from [USC Agent](https://github.com/USC-CSCI527-Spring2021/Doodle-Jump)
 
 ### Advantage Actor-Critic (A2C)  
 
@@ -138,9 +142,13 @@ A2C learns smoother, lower-variance policies, which in our experiments led to sl
 - Discount factor $$\gamma$$: 0.9
 - Memory buffer: 10,000 steps
 - Batch size: 1,000
-- Optimizer: RMSprop ($$\alpha$$=0.99, $$\epsilon$$=1e-5)
+- Policy: RMSprop
 - Entropy coefficient: 0.01
 - Value loss coefficient: 0.5
+
+All other parameters left at default from [stablebaslines3](https://stable-baselines3.readthedocs.io/en/master/modules/a2c.html)
+
+Updated parameters sourced from [USC Agent](https://github.com/USC-CSCI527-Spring2021/Doodle-Jump)
 
 ### Proximal Policy Optimization
 
@@ -174,11 +182,15 @@ After each update, the policy is improved by shifting towards actions with posit
 - Discount factor $$\gamma$$: 0.9
 - Memory buffer: 10,000 steps
 - Batch size: 1,000
-- Optimizer: Adam ($$\beta_{1}$$=0.9, $$\beta_{2}$$=0.999, $$\epsilon$$=1e-8)
+- Policy: Adam
 - Clip parameter $$\epsilon$$: 0.2
 - Value loss coefficient: 0.5
 - Entropy coefficient: 0.01
 - Number of epochs per update: 4
+
+All other parameters left at default from [stablebaslines3](https://stable-baselines3.readthedocs.io/en/master/modules/ppo.html)
+
+Updated parameters sourced from [USC Agent](https://github.com/USC-CSCI527-Spring2021/Doodle-Jump)
 
 ### Hyperparameters Summary  
 
