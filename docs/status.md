@@ -43,7 +43,9 @@ $$\pi(s) =
 \text{random action}, & \text{with probability } \epsilon \\
 \arg\max_a Q(s,a), & \text{otherwise}  
 \end{cases}
-$$
+$$  
+
+Sourced from [CS175 Lecture 2](https://royf.org/crs/CS175/W26/CS175L2.pdf)
 
 This allows the agent to explore new actions while gradually favoring high-value actions. In our case, ε is set to 0.2, so our agent explores a random action 20% of the time.
 
@@ -52,7 +54,9 @@ This allows the agent to explore new actions while gradually favoring high-value
 During policy evaluation, the network parameters $$\theta$$ are updated by minimizing the *fitted Q loss*:  
 
 $$\mathcal{L}_{\theta}
-= \bigl(r_t + \gamma \max_{a'} Q_{\theta}(s_{t+1}, a') - Q_{\theta}(s_t, a_t)\bigr)^2$$
+= \bigl(r_t + \gamma \max_{a'} Q_{\theta}(s_{t+1}, a') - Q_{\theta}(s_t, a_t)\bigr)^2$$  
+
+Sourced from [CS175 Lecture 2](https://royf.org/crs/CS175/W26/CS175L2.pdf)
 
 where:
 - $$r_t$$ is the reward received from the environment after the agent takes action at in state st, stored as part of the transition tuple in the replay buffer
@@ -98,6 +102,8 @@ Algorithm:
   - Update $$\Delta\theta \leftarrow \sum_{t}(R_{\geq t}(\xi) - V_{\phi}(s_t))\Delta_{\theta}log\pi_{\theta}(a_t | s_t)$$
   - Descend $$L_{\phi} = \sum_{t}(R_{\geq t}(\xi) - V_{\phi}(s_t))^2$$
 
+Sourced from [CS175 Lecture 2](https://royf.org/crs/CS175/W26/CS175L2.pdf)
+
 Following the algorithm, the agent performs rollouts, meaning training data are sampled using the current policy. In our implementation, the agent collects batches of 1,000 steps per update over 1,000 game iterations.
 
 These rollouts capture sequences of platform landings, vertical progress, and hazard interactions, enabling the agent to learn stable jumping behavior.
@@ -108,7 +114,7 @@ The actor is updated using the advantage function:
 
 $$A_t = R_{\geq t}(\xi) - V_{\phi}(s_t)$$
 
-where $$R_{geq t}(\xi)$$ is the return from time $$t$$ onward.
+where $$R_{\geq t}(\xi)$$ is the return from time $$t$$ onward.
 
 The policy parameters are updated as:  
 
@@ -152,7 +158,9 @@ The training data consists of $$(s_t, a_t, log\pi(a_t|s_t), V_t, r_t, d_t)$$ whe
 
 PPO is an on-policy method, meaning it learns directly from transitions collected under the current policy. Rather than a large replay buffer, experience is accumulated in a short-term buffer and then the buffer is refreshed with new experience. During policy evaluation, the network parameters θ are updated by maximizing the objective:
 
-$$L^\theta_{\bar{\theta}}(s, a) = \min(\rho^\theta_{\bar{\theta}}(a \mid s) A_{\bar{\theta}}(s, a),\ A_{\bar{\theta}}(s, a) + | \epsilon A_{\bar{\theta}}(s, a) |)$$
+$$L^\theta_{\bar{\theta}}(s, a) = \min(\rho^\theta_{\bar{\theta}}(a \mid s) A_{\bar{\theta}}(s, a),\ A_{\bar{\theta}}(s, a) + | \epsilon A_{\bar{\theta}}(s, a) |)$$  
+
+Sourced from [CS175 Lecture 2](https://royf.org/crs/CS175/W26/CS175L2.pdf)
 
 where:
 - $$\rho^\theta_{\bar{\theta}}(a \mid s) = \frac{\pi_{\bar{\theta}}(a \mid s)}{\pi_{\theta}(a \mid s)}$$ is the probability ratio between the updated policy and the old policy
