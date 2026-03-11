@@ -78,11 +78,12 @@ $$\mathcal{L}_{\theta}
 Sourced from [CS175 Lecture 2](https://royf.org/crs/CS175/W26/CS175L2.pdf)
 
 where:
-- $$r_t$$ is the reward received from the environment after the agent takes action at in state st, stored as part of the transition tuple in the replay buffer
+- $$r_t$$ is the reward received from the environment after the agent takes action $$a_t$$ in state $$s_t$$, stored as part of the transition tuple in the replay buffer
 - $$\gamma = 0.9$$ is the discount factor, which controls how much future rewards are weighted relative to immediate rewards. A value of 0.9 means the agent values near-term rewards more heavily but still accounts for long-term consequences
-- $$\max_{a'} Q_{\theta}(s_{t+1}, a')$$ is the maximum Q-value predicted by the network over all possible actions in the next state st+1. Since there is no separate target network in this implementation, the same live network parameters θ are used to compute this bootstrap target, meaning the target updates every training step
-- $$Q_{\theta}(s_t, a_t)$$ is the Q-value predicted by the network for the action at actually taken in state st
-- $$Q_{\theta}(s_t, a_t) - (r_t + \gamma \max_{a'} Q_{\theta}(s_{t+1}, a')$$ is the temporal-difference (TD) error, representing the gap between the network's current Q-value estimate and the bootstrapped target. The loss minimizes the squared TD error to bring these two values closer together
+- $$\max_{a'} Q_{\theta}(s_{t+1}, a')$$ is the maximum Q-value predicted by the network over all possible actions in the next state $$s_{t+1}$$, used to bootstrap the TD target
+- $$Q_{\theta}(s_t, a_t)$$ is the Q-value predicted by the network for the action $$a_t$$ actually taken in state $$s_t$$
+- $$Q_{\theta}(s_t, a_t) - (r_t + \gamma \max_{a'} Q_{\theta}(s_{t+1}, a'))$$ is the temporal-difference (TD) error, representing the gap between the network's current Q-value estimate and the bootstrapped target. The loss minimizes the squared TD error to bring these two values closer together
+
 
 This loss reduces the temporal-difference error between predicted and target Q-values.
 
@@ -102,7 +103,6 @@ DQN learns to estimate long-term rewards for lateral movements, enabling the age
 - Replay buffer size: 10,000
 - Batch size: 1,000
 - Policy: Adam
-- Target network update frequency: every 1,000 steps
 
 All other parameters left at default from [stablebaslines3](https://stable-baselines3.readthedocs.io/en/master/modules/dqn.html)  
 
