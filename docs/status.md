@@ -102,7 +102,8 @@ DQN learns to estimate long-term rewards for lateral movements, enabling the age
 - Discount factor $$\gamma$$: 0.9
 - Replay buffer size: 10,000
 - Batch size: 1,000
-- Policy: Adam
+- Optimizer: Adam
+- Target network sync: every 10 games
 
 All other parameters left at default from [stablebaslines3](https://stable-baselines3.readthedocs.io/en/master/modules/dqn.html)  
 
@@ -161,7 +162,7 @@ A2C learns smoother, lower-variance policies, which in our experiments led to sl
 - Discount factor $$\gamma$$: 0.9
 - Memory buffer: 10,000 steps
 - Batch size: 1,000
-- Policy: RMSprop
+- Optimizer: RMSprop
 - Entropy coefficient: 0.01
 - Value loss coefficient: 0.5
 
@@ -201,7 +202,7 @@ After each update, the policy is improved by shifting towards actions with posit
 - Discount factor $$\gamma$$: 0.9
 - Memory buffer: 10,000 steps
 - Batch size: 1,000
-- Policy: Adam
+- Optimizer: Adam
 - Clip parameter $$\epsilon$$: 0.2
 - Value loss coefficient: 0.5
 - Entropy coefficient: 0.01
