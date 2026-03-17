@@ -228,7 +228,7 @@ To evaluate our Doodle Jump RL agents, we ran each model for 1,000 game iteratio
 
 | Agent | Mean Score | Maximum Score |
 |-------|------------|---------------|
-| DQN   | 2,290.5    | 24,600        |
+| DQN   | 2,192.4    | 24,600        |
 | A2C   | 2,019      | 20,600        |
 | PPO   | 1,116.7    | 9,200         |
 
