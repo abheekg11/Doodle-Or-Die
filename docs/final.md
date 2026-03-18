@@ -22,7 +22,7 @@ tr:nth-child(even) {
 }
 </style>
 
-<iframe width="752" height="432" src="https://youtu.be/UJE7Mk0Q85c?si=au9EufSY2hFfoAM3" title="Doodle or Die - CS 175 Final - Abheek, Arnav, and Ganeev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="752" height="432" src="https://www.youtube.com/embed/UJE7Mk0Q85c?si=1LRTIS-v5CkNlw9z" title="Doodle or Die - CS 175 Final - Abheek, Arnav, and Ganeev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Project Summary
 
