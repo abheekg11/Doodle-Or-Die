@@ -279,7 +279,7 @@ Updated parameters sourced from [USC Agent](https://github.com/USC-CSCI527-Sprin
 
 To evaluate our Doodle Jump RL agents, we ran each model for 1,000 game iterations during the status report period and 3,000 game iterations during the final report period and recorded both the mean score and the maximum score achieved. The scores correspond to the total vertical height gained in each round.
 
-(Status Report Results)
+Status Report Results
 
 | Agent | Mean Score | Maximum Score |
 |-------|------------|---------------|
@@ -287,7 +287,7 @@ To evaluate our Doodle Jump RL agents, we ran each model for 1,000 game iteratio
 | A2C   | 2,019      | 20,600        |
 | PPO   | 1,116.7    | 9,200         |
 
-(Final Report Results)
+Final Report Results
 
 | Agent | Mean Score | Maximum Score |
 |-------|------------|---------------|
