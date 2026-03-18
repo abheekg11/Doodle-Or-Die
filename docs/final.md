@@ -306,7 +306,9 @@ Beyond numerical performance, we also observed differences in agent *behavior* d
 - A2C: 
   - At status report: Moves slowly and favors the center of the screen. This conservative policy results in relatively stable mean scores but lower maximum scores, as the agent rarely chooses riskier lateral movements. Also, this leads to the agent falling off cliffs occasionally due to not moving fast enough to reach platforms. 
   - After changes: Mostly showing the same behavior as from the status report. However, the agent tends to make more questionable decisions, more commonly falling off cliffs and gravitating towards edges. Furthermore, it really struggles to achieve high scores due to being overly conservative and then making a few unfavorable decisions. 
-- PPO: Balances between central and side positions with medium-speed movements. This strategy produces lower maximum scores while also lowering mean performance showing the ineffectiveness of the clipped policy updates and entropy-driven exploration.
+- PPO:
+  - At status report: Balances between central and side positions with medium-speed movements. This strategy produces lower maximum scores while also lowering mean performance showing the ineffectiveness of the clipped policy updates and entropy-driven exploration.
+  - We chose not to focus on PPO after the status report due to suboptimal performance compared to DQN/A2C.
 
 ## What We Could Have Done Better
 
