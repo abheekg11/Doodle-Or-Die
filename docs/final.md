@@ -22,7 +22,7 @@ tr:nth-child(even) {
 }
 </style>
 
-<iframe width="752" height="432" src="https://www.youtube.com/embed/_sAHElX0HlM" title="Doodle or Die - CS 175 - Abheek, Arnav, and Ganeev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="752" height="432" src="https://youtu.be/UJE7Mk0Q85c" title="Doodle or Die - CS 175 Final - Abheek, Arnav, and Ganeev" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Project Summary
 
@@ -30,7 +30,7 @@ Our project explores using reinforcement learning to train an agent for Doodle J
 
 Throughout this project, we compared various RL methods including DQN, A2C, and PPO to see how well they survive and how high they progress in Doodle Jump. While building a pipeline for training, we also experimented with tuning hyperparameters and evaluated across many iterations. Ultimately, this gave us insight as to how modern reinforcement learning methods can learn complex tactics even in very simple game settings. 
 <figure style="text-align:center;">
-  <img src="images/Doodle_Jump_Game.png">
+  <img src="images/Doodle_Jump_Game.png" width="300" height="800">
   <figcaption>Doodle Jump Game Example</figcaption>
 </figure>
 
